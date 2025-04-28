@@ -2,11 +2,13 @@
 import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useHeaderModel } from "./HeaderModel";
+import { useLocation } from "react-router-dom";
 
 export const useHeaderController = () => {
   const overlayRef = useRef(null);
   const burgerRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const { user, logout, cartCount } = useHeaderModel();
 
   useEffect(() => {
@@ -31,6 +33,10 @@ export const useHeaderController = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("is-lock");
+  }, [location.pathname]);
 
   const handleLogout = () => {
     logout();
