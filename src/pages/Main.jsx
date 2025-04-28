@@ -40,9 +40,9 @@ const MainPage = () => {
                 with <span className="hero__title--highlight">a Dash of</span>{" "}
                 Speed
               </h1>
-              <a className="hero__button button button-large" href="/menu">
+              <Link className="hero__button button button-large" to="/menu">
                 Order Now
-              </a>
+              </Link>
             </div>
 
             <img
