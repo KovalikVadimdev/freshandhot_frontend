@@ -11,7 +11,7 @@ const App = () => {
   return (
     <OrderProvider>
       <AuthProvider>
-        <Router basename="/freshandhot">
+        <Router>
           {/* <Router> */}
           <Routes>
             <Route path="/" element={<MainPage />} />
