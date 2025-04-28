@@ -6,6 +6,7 @@ import RegularMenu from "../components/RegularMenu/RegularMenu";
 import Reviews from "../components/Reviews/Reviews";
 import Footer from "../blocks/Footer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   const [advantages, setAdvantages] = useState([]);
