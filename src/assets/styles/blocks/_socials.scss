@@ -1,0 +1,19 @@
+@use "../helpers/" as *;
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__list {
+    display: flex;
+    column-gap: rem(20);
+
+    @include laptop {
+      column-gap: rem(14);
+    }
+  }
+
+  &__link {
+    color: var(--color-text-secondary);
+  }
+}

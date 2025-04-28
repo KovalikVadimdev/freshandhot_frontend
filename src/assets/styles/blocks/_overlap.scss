@@ -1,0 +1,19 @@
+@use "../helpers" as *;
+
+.overlap {
+  &__main {
+    background-color: var(--color-white);
+    box-shadow: 0 rem(4) rem(4) 0 rgba(0, 0, 0, 0.25);
+    border-radius: rem(24);
+    position: relative;
+    transform: translateY(-50%);
+
+    @include laptop {
+      transform: translateY(0);
+    }
+
+    @include tablet {
+      border-radius: 0;
+    }
+  }
+}

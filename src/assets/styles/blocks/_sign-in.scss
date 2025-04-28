@@ -1,0 +1,72 @@
+@use "../helpers" as *;
+
+.sign-in {
+  &__inner {
+    display: grid;
+    row-gap: rem(45);
+  }
+
+  &__cell {
+    display: grid;
+    grid-column: -1 / 1;
+  }
+
+  &__title {
+    @include fluid-text(34, 28);
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  &__button-show {
+    border: none;
+    border-bottom: rem(1) solid var(--color-text-primary);
+    background-color: transparent;
+    &.visible {
+      display: block;
+    }
+
+    &.unvisible {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include fluid-text(20, 14);
+    font-weight: 700;
+    line-height: 1;
+    padding-block: rem(18);
+    &-auth {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: rem(10);
+      padding: rem(20) rem(30);
+      border: rem(1) solid var(--color-text-primary);
+      background-color: var(--color-white);
+      border-radius: rem(10);
+    }
+
+    &-text {
+      font-size: rem(12);
+      font-weight: 600;
+      font-family: "Open Sans", sans-serif;
+      color: var(--color-text-primary);
+    }
+
+    &-image {
+      @include square(rem(20));
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    &-link {
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+  }
+}

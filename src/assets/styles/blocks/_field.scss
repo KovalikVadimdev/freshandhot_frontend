@@ -1,0 +1,28 @@
+@use "../helpers/" as *;
+
+.field {
+  &__label {
+    font-size: rem(14);
+    font-family: "Poppins", sans-serif;
+    color: var(--color-white-alt);
+    font-weight: 500;
+  }
+
+  &__control {
+    border: none;
+    width: 100%;
+    padding: rem(11) rem(18);
+    border-radius: rem(6);
+    &::placeholder {
+      font-size: rem(12);
+      font-family: "Poppins", sans-serif;
+      color: var(--color-gray-light-alt);
+      font-weight: 500;
+    }
+  }
+}
+
+.error {
+  @include fluid-text(16, 11);
+  color: var(--color-white);
+}

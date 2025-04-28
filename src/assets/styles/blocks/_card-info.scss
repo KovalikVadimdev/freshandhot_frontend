@@ -1,0 +1,86 @@
+@use "../helpers/" as *;
+
+.card-info {
+  display: grid;
+  row-gap: rem(50);
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(26);
+    column-gap: rem(8);
+  }
+  &__cell {
+    &--wide {
+      grid-column: -1 / 1;
+    }
+
+    &-checkout {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__title {
+    display: grid;
+    row-gap: rem(13);
+    &-subtotal {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &-shipping {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &-total {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  &__currency {
+    display: grid;
+    row-gap: rem(13);
+    justify-self: flex-end;
+    text-align: right;
+    &-subtotal {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &-shipping {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &-total {
+      font-size: rem(14);
+      color: var(--color-white-alt);
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  &__checkout {
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}

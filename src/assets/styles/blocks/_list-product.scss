@@ -1,0 +1,16 @@
+@use "../helpers" as *;
+
+.list-product {
+  &__product-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(10) rem(26);
+    background-color: var(--color-white);
+    border-radius: rem(15);
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use "../helpers/" as *;
+
+.field-auth {
+  &__label {
+    font-size: rem(14);
+    font-family: "open Sans", sans-serif;
+    font-weight: 400;
+    color: var(--color-text-primary);
+  }
+
+  &__control {
+    @include fluid-text(20, 14);
+    font-family: "open Sans", sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    padding-block: rem(17);
+    border: none;
+    border-bottom: rem(1) solid var(--color-text-primary);
+
+    &--error {
+      @include fluid-text(16, 12);
+      color: var(--color-accent);
+    }
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: auto rem(50);
+  }
+
+  &__sign {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(21);
+
+    @include mobile-s {
+      grid-template-columns: 1fr;
+      row-gap: rem(10);
+    }
+  }
+}

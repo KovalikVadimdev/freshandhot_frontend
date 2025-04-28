@@ -1,0 +1,37 @@
+@use "../helpers" as *;
+
+.shopping-cart {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(50);
+    height: rem(700);
+  }
+
+  &__back {
+    border-bottom: rem(4) dashed var(--color-accent);
+
+    &-button {
+      font-weight: 600;
+      color: var(--color-dark);
+      padding-block: rem(13);
+      background: transparent;
+      border: none;
+    }
+  }
+
+  &__text {
+    @include fluid-text(18, 14);
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+
+  &__list-product {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(26);
+
+    max-height: rem(500);
+    overflow-y: auto;
+  }
+}

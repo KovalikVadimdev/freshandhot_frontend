@@ -1,0 +1,69 @@
+@use "../helpers" as *;
+
+.favorite {
+  &__header {
+    padding-top: fluid(95, 30);
+    padding-bottom: fluid(60, 20);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(10);
+
+    &-inner {
+      padding-bottom: rem(55);
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: rem(10);
+    }
+  }
+
+  &__title {
+    align-self: center;
+    max-width: rem(475);
+
+    &--highlight {
+      color: var(--color-accent);
+    }
+
+    @include tablet {
+      max-width: rem(400);
+      justify-self: center;
+      text-align: center;
+    }
+
+    @include mobile {
+      max-width: rem(325);
+    }
+  }
+
+  &__text {
+    max-width: rem(457);
+    justify-self: end;
+    align-self: center;
+
+    @include tablet {
+      justify-self: center;
+      text-align: center;
+      max-width: rem(550);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  &__country {
+    width: 100%;
+    background-color: var(--color-background);
+    pointer-events: none;
+    transition-timing-function: linear;
+  }
+}

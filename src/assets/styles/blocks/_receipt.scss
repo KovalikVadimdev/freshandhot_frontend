@@ -1,0 +1,50 @@
+@use "../helpers/" as *;
+
+.receipt {
+  display: flex;
+  justify-content: center;
+  height: rem(700);
+  &__content {
+    max-width: rem(550);
+  }
+
+  &__card {
+    background-color: var(--color-accent);
+    border-radius: rem(20);
+    padding: rem(50) rem(80);
+    display: grid;
+    row-gap: rem(25);
+
+    @include mobile {
+      padding: rem(35) rem(12);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    font-weight: 600;
+    color: var(--color-white-alt);
+    white-space: nowrap;
+
+    @include laptop {
+      @include fluid-text(32, 28);
+    }
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+}

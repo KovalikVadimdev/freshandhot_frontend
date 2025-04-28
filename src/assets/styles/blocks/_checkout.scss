@@ -1,0 +1,12 @@
+@use "../helpers" as *;
+
+.order {
+  height: 100vh;
+  background-color: var(--color-background);
+}
+
+.checkout {
+  &__body {
+    display: grid;
+  }
+}

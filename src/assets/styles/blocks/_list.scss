@@ -1,0 +1,62 @@
+@use "../helpers/" as *;
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: rem(36) rem(24);
+  column-gap: rem(34);
+  &__item {
+    display: grid;
+    grid-template-columns: auto 71.25%;
+    column-gap: rem(22);
+    @include laptop {
+      &:last-child {
+        align-self: center;
+        justify-self: center;
+        grid-area: 2 / 1 / 3 / 3;
+      }
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  &__image {
+    justify-self: center;
+    align-self: center;
+  }
+
+  &__descriptions {
+    justify-self: left;
+    align-self: center;
+  }
+
+  &__title {
+    white-space: nowrap;
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @include fluid-text(16, 14);
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: rem(50);
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}

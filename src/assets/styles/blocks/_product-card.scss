@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+
+.product-card {
+  &__title {
+    @include fluid-text(16, 14);
+
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: rem(14);
+  }
+
+  &__price {
+    @include fluid-text(24, 18);
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  &__remove {
+    background-color: transparent;
+    @include hover {
+      background-color: transparent;
+      border: rem(1) solid transparent;
+    }
+  }
+}

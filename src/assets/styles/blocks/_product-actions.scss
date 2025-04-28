@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.product-actions {
+  &__button {
+    @include fluid-text(16, 14);
+    @include square(rem(36));
+    color: var(--color-white);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__count {
+    @include fluid-text(16, 14);
+
+    color: #000;
+    font-weight: 400;
+  }
+}

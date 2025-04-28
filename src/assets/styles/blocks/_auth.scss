@@ -1,0 +1,39 @@
+@use "../helpers" as *;
+
+.sign {
+  height: 100vh;
+}
+
+.auth {
+  &__inner {
+    display: grid;
+    grid-template-columns: auto 52%;
+    column-gap: rem(126);
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image {
+    width: 100vw;
+    height: 100vh;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    row-gap: rem(33);
+    max-width: rem(460);
+    @include laptop {
+      justify-self: center;
+    }
+
+    @include mobile {
+      row-gap: rem(10);
+    }
+  }
+}

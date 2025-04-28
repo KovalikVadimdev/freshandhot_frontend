@@ -1,0 +1,48 @@
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+@use "blocks/burger-button";
+@use "blocks/button";
+@use "blocks/header";
+@use "blocks/logo";
+
+@use "blocks/hero";
+
+@use "blocks/list";
+@use "blocks/overlap";
+
+@use "blocks/country";
+@use "blocks/card";
+@use "blocks/favorite";
+
+@use "blocks/regular";
+
+@use "blocks/reviews";
+
+@use "blocks/socials";
+@use "blocks/footer";
+
+@use "blocks/popular";
+
+@use "blocks/card-info";
+@use "blocks/checkout";
+@use "blocks/field";
+@use "blocks/list-product";
+@use "blocks/product-actions";
+@use "blocks/product-card";
+@use "blocks/receipt";
+@use "blocks/shopping-cart";
+@use "blocks/tabs";
+
+@use "blocks/auth";
+@use "blocks/sign-in";
+@use "blocks/field-auth";
+
+// .header,
+// main > *:not(:last-child),
+// .footer {
+//   display: none !important;
+// }

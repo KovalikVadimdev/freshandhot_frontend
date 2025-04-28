@@ -1,0 +1,113 @@
+@use "../helpers/" as *;
+
+.footer {
+  border-top: rem(3) dashed transparent;
+  border-image: var(--border);
+
+  &__body {
+    padding-block: fluid(100, 50);
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    column-gap: fluid(190, 50);
+
+    &-column {
+      display: grid;
+      row-gap: fluid(32, 14);
+    }
+
+    &-main-link {
+      @include fluid-text(36, 24);
+
+      color: var(--color-accent);
+      font-weight: 600;
+
+      &--right {
+        display: flex;
+        justify-content: end;
+      }
+
+      &--center {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include mobile {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(20, 10);
+
+      &--right {
+        text-align: right;
+      }
+
+      &--center {
+        text-align: center;
+      }
+
+      @include mobile {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-address {
+      @include mobile {
+        text-align: center;
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: rem(30);
+    }
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    padding-block: rem(30);
+
+    @include laptop {
+      padding-block: rem(18);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+
+  &__authors {
+    text-align: center;
+
+    @include mobile {
+      order: 2;
+    }
+  }
+
+  &__socials {
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+
+    @include mobile {
+      order: 3;
+    }
+  }
+}

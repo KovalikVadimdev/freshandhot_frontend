@@ -1,0 +1,51 @@
+@use "../helpers" as *;
+
+.tabs {
+  &__body {
+    display: grid;
+    grid-template-columns: 55% auto;
+    column-gap: rem(80);
+
+    margin-block: rem(50);
+
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    @include laptop {
+      &:not(.is-active) {
+        display: none;
+      }
+    }
+  }
+
+  &__control {
+    justify-self: center;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(15);
+    padding: rem(14) rem(28);
+    background-color: var(--color-accent);
+    border-radius: rem(15);
+
+    @include laptop-above {
+      display: none;
+    }
+  }
+
+  &__button {
+    border: 1px solid transparent;
+    background-color: #fff;
+    border-radius: rem(50);
+    color: var(--color-accent);
+    &.is-active {
+      background-color: var(--color-accent);
+      color: var(--color-white);
+    }
+  }
+}

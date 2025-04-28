@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.country {
+  &__wrapper {
+    transition-timing-function: linear;
+  }
+
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: center;
+  }
+
+  &__image {
+    margin: rem(26) rem(24) rem(26) 0;
+  }
+
+  &__text {
+    @include fluid-text(32, 18);
+
+    color: var(--color-text-primary-alt);
+    white-space: nowrap;
+  }
+}

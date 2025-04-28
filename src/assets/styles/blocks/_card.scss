@@ -1,0 +1,78 @@
+@use "../helpers" as *;
+
+.card {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  margin: rem(16) rem(24);
+
+  &__preview {
+    align-self: center;
+    justify-self: center;
+    &-image {
+      border-radius: 50%;
+      border: rem(6) dashed var(--color-accent);
+      padding: rem(25);
+      margin: rem(25);
+
+      @include laptop {
+        @include square(rem(240));
+
+        margin: rem(15);
+      }
+
+      @include mobile-s {
+        @include square(rem(200));
+
+        padding: rem(15);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: flex-end;
+    row-gap: rem(10);
+    &-title {
+      text-align: center;
+    }
+
+    &-button {
+      align-self: center;
+      color: var(--color-accent);
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  &-regular {
+    &__preview {
+      &-image {
+        padding: rem(25);
+        border: rem(6) dashed var(--color-accent);
+        border-radius: 50%;
+      }
+    }
+
+    &__body {
+      background-color: var(--color-background);
+    }
+
+    &__description {
+      &-title {
+        &--highlight {
+          color: var(--color-accent);
+        }
+      }
+    }
+
+    &__rating {
+      display: flex;
+    }
+
+    &__action {
+      display: flex;
+    }
+  }
+}

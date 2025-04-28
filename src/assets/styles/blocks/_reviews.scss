@@ -1,0 +1,47 @@
+@use "../helpers" as *;
+
+.reviews {
+  &__inner {
+    padding-bottom: rem(40);
+  }
+
+  &__title {
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: rem(22);
+  }
+
+  &__swiper {
+    display: block;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: rem(25) rem(20);
+    background-color: var(--color-background);
+
+    @include tablet {
+      padding-inline: rem(40);
+    }
+  }
+
+  &__name {
+    @include fluid-text(24, 18);
+    font-weight: 600;
+  }
+
+  &__text {
+    text-align: center;
+    @include fluid-text(18, 16);
+    font-weight: 400;
+  }
+}
