@@ -6,7 +6,7 @@ import {
   loginWithEmail,
   getUserInfoFromGoogle,
   getUserInfoFromFacebook,
-} from "./signInModel";
+} from "./SignInModel";
 
 const SignInController = () => {
   const { login } = useAuth();
