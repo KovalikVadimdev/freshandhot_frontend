@@ -1,0 +1,35 @@
+@startuml RegularMenu
+actor User
+
+package "View" {
+  component RegularMenu
+  component RegularMenuView
+}
+
+package "Controller" {
+  component RegularMenuController
+}
+
+package "Model" {
+  component RegularMenuModel
+}
+
+component "Order Context" as useOrder
+component "Server API" as Server
+
+User --> RegularMenu : load
+RegularMenu --> RegularMenuController : render
+
+RegularMenuController --> RegularMenuModel : fetchMenuItems()
+RegularMenuModel --> Server : GET /api/menu
+Server --> RegularMenuModel : return JSON
+RegularMenuModel --> RegularMenuController : menu data
+
+RegularMenuController --> useOrder : addOrder(item)
+
+RegularMenuController --> RegularMenuView : props (foodItems, handleAddToCart)
+
+User --> RegularMenuView : clicks "Buy Now"
+RegularMenuView --> RegularMenuController : handleAddToCart(item)
+
+@enduml

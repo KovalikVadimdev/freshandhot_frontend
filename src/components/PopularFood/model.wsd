@@ -1,0 +1,34 @@
+@startuml PopularFoodModel
+actor User
+
+package "View" {
+  component PopularFood
+  component PopularFoodView
+}
+
+package "Controller" {
+  component PopularFoodController
+}
+
+package "Model" {
+  component PopularFoodModel
+}
+
+component "Order Context" as useOrder
+component "Server API" as Server
+
+User --> PopularFood : load
+PopularFood --> PopularFoodController : render
+
+PopularFoodController --> PopularFoodModel : fetchMenuItems()
+PopularFoodModel --> Server : GET /api/menu
+Server --> PopularFoodModel : JSON data
+PopularFoodModel --> PopularFoodController : return data
+
+PopularFoodController --> useOrder : addOrder(item)
+PopularFoodController --> PopularFoodView : props (foodItems, handlers)
+
+User --> PopularFoodView : clicks + / - / Add to Cart
+PopularFoodView --> PopularFoodController : handleIncrease(id) / handleDecrease(id) / handleAddToCart(item)
+
+@enduml

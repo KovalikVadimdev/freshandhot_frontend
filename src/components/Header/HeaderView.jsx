@@ -1,4 +1,3 @@
-// HeaderView.jsx
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import person from "../../assets/icons/person.svg";

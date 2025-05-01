@@ -1,0 +1,26 @@
+@startuml CountrySlider
+actor User
+
+package "View" {
+  component CountrySlider
+  component CountrySliderView
+}
+
+package "Controller" {
+  component CountrySliderController
+}
+
+package "Model" {
+  component CountrySliderModel
+}
+
+User --> CountrySlider : load
+CountrySlider --> CountrySliderController : render()
+
+CountrySliderModel --> CountrySliderController : provides static data
+
+CountrySliderController --> CountrySliderView : props (cities)
+
+User --> CountrySliderView : views animated slider
+
+@enduml

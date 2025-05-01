@@ -1,0 +1,18 @@
+@startuml Order
+
+actor User
+
+User -> OrderView : Взаємодія через UI
+OrderView -> OrderController : Виклик хендлерів, доступ до даних
+OrderController -> OrderModel : Обчислення (subtotal, shipping, total)
+OrderController -> OrderContext : Маніпуляція з orders
+OrderController -> AuthContext : Отримання user
+OrderController -> OrderModel : saveOrder(orderData)
+
+OrderModel --> OrderController : subtotal, shipping, total
+OrderContext --> OrderController : orders, increase/decrease/remove/clear
+AuthContext --> OrderController : user
+
+OrderController --> OrderView : Пропсами передає дані та хендлери
+
+@enduml

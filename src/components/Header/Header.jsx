@@ -1,4 +1,3 @@
-// Header.jsx
 import { HeaderView } from "./HeaderView";
 import { useHeaderController } from "./HeaderController";
 

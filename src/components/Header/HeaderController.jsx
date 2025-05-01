@@ -1,8 +1,6 @@
-// HeaderController.js
 import { useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useHeaderModel } from "./HeaderModel";
-import { useLocation } from "react-router-dom";
 
 export const useHeaderController = () => {
   const overlayRef = useRef(null);

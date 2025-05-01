@@ -1,0 +1,33 @@
+@startuml HeaderModel
+actor User
+
+package "View" {
+  component Header
+  component HeaderView
+}
+
+package "Controller" {
+  component HeaderController
+}
+
+package "Model" {
+  component HeaderModel
+}
+
+component "Auth Context" as useAuth
+component "Order Context" as useOrder
+
+User --> Header : load
+Header --> HeaderController : call hook
+
+HeaderController --> HeaderModel : call model
+HeaderModel --> useAuth : get user, logout
+HeaderModel --> useOrder : get orders
+HeaderModel --> HeaderController : return user, logout, cartCount
+
+HeaderController --> HeaderView : props (overlayRef, burgerRef, handleLogout, user, cartCount)
+
+User --> HeaderView : clicks burger/menu/logout
+HeaderView --> HeaderController : handleLogout()
+
+@enduml

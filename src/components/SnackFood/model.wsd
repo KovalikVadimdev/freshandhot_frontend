@@ -1,0 +1,35 @@
+@startuml SnackFood
+actor User
+
+package "View" {
+  component SnackFood
+  component SnackFoodView
+}
+
+package "Controller" {
+  component SnackFoodController
+}
+
+package "Model" {
+  component SnackFoodModel
+}
+
+component "Order Context" as useOrder
+component "Server API" as Server
+
+User --> SnackFood : load
+SnackFood --> SnackFoodController : render
+
+SnackFoodController --> SnackFoodModel : fetchMenuData()
+SnackFoodModel --> Server : GET /api/menu
+Server --> SnackFoodModel : return JSON
+SnackFoodModel --> SnackFoodController : menu data
+
+SnackFoodController --> SnackFoodView : props (filtered foodItems, handlers)
+
+User --> SnackFoodView : interact (increase, decrease, add to cart)
+SnackFoodView --> SnackFoodController : handleIncrease / handleDecrease / handleAddToCart
+
+SnackFoodController --> useOrder : addOrder()
+
+@enduml

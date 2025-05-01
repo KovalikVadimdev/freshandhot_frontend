@@ -1,5 +1,3 @@
-// SignUpView.jsx
-
 import { Link } from "react-router-dom";
 import loginRegistrationBg from "../../assets/images/login_registration_bg.png";
 import logo from "../../assets/icons/logo.svg";

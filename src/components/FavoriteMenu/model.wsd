@@ -1,0 +1,35 @@
+@startuml FavoriteMenu
+actor User
+
+package "View" {
+  component FavoriteMenu
+  component FavoriteMenuView
+}
+
+package "Controller" {
+  component FavoriteMenuController
+}
+
+package "Model" {
+  component FavoriteMenuModel
+}
+
+component "Order Context"
+component "Server"
+
+User --> FavoriteMenu : load
+User --> FavoriteMenuView : clicks "Order Now"
+"Server" --> FavoriteMenuModel : JSON data
+
+FavoriteMenu --> FavoriteMenuController : render()
+
+FavoriteMenuController --> FavoriteMenuView : props (foodItems, loading, handleOrderNow)
+FavoriteMenuController --> FavoriteMenuModel : fetchMenuItems()
+FavoriteMenuController --> "Order Context" : addOrder(item)
+
+FavoriteMenuModel --> FavoriteMenuController : returns food data
+FavoriteMenuModel  --> Server : HTTP GET /api/menu
+
+
+FavoriteMenuView --> FavoriteMenuController : handleOrderNow(item)
+@enduml

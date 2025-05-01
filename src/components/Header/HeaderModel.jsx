@@ -1,4 +1,3 @@
-// HeaderModel.js
 import { useOrder } from "../../contexts/useOrder";
 import { useAuth } from "../../contexts/useAuth";
 

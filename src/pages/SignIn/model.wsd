@@ -1,0 +1,20 @@
+@startuml SignIn
+
+actor User
+
+User -> SignInView : Взаємодія через UI
+SignInView -> SignInController : Виклик хендлерів та доступ до даних (email, password, showPassword)
+
+SignInController -> SignInModel : loginWithEmail(email, password)
+SignInController -> SignInModel : getUserInfoFromGoogle(token)
+SignInController -> SignInModel : getUserInfoFromFacebook(token)
+
+SignInController -> AuthContext : login(userData)
+
+
+SignInModel --> SignInController : дані користувача / результат логіну
+AuthContext --> SignInController : функція login
+
+SignInController --> SignInView : Пропсами передає стан і хендлери
+
+@enduml

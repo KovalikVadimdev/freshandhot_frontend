@@ -1,0 +1,44 @@
+@startuml SignUp
+
+package "View" {
+  class SignUpView {
+    +props: username, email, password, errors, ...
+    +render()
+    +onChange()
+    +onSubmit()
+    +onSocialLogin()
+  }
+}
+
+package "Controller" {
+  class useSignUpController {
+    -username: string
+    -email: string
+    -password: string
+    -errors: object
+    +handleSubmit()
+    +handleGoogleLogin()
+    +handleFacebookLogin()
+  }
+
+  class SignUp {
+    +useSignUpController()
+    +return SignUpView(props)
+  }
+}
+
+package "Model" {
+  class SignUpModel {
+    +validateForm(username, email, password)
+    +registerUser(username, email, password)
+  }
+}
+
+' Relationships
+SignUp --> useSignUpController : uses
+SignUp --> SignUpView : renders
+
+useSignUpController --> SignUpModel : calls validateForm()\nregisterUser()
+SignUpView --> useSignUpController : receives props from
+
+@enduml

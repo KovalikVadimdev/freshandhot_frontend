@@ -1,0 +1,31 @@
+@startuml Reviews
+actor User
+
+package "View" {
+  component Reviews
+  component ReviewsView
+}
+
+package "Controller" {
+  component ReviewsController
+}
+
+package "Model" {
+  component ReviewsModel
+}
+
+component "Server API" as Server
+
+User --> Reviews : load
+Reviews --> ReviewsController : render
+
+ReviewsController --> ReviewsModel : fetchReviewsItems()
+ReviewsModel --> Server : GET /api/reviews
+Server --> ReviewsModel : return JSON
+ReviewsModel --> ReviewsController : review data
+
+ReviewsController --> ReviewsView : props (reviews)
+
+ReviewsView --> User : display Swiper with reviews
+
+@enduml

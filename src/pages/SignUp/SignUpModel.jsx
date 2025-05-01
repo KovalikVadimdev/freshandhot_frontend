@@ -1,5 +1,3 @@
-// SignUpModel.jsx
-
 export const validateForm = (username, email, password) => {
   let valid = true;
   const errors = { username: "", email: "", password: "" };

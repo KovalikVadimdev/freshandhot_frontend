@@ -1,5 +1,3 @@
-// SignUp.jsx
-
 import { useSignUpController } from "./SignUpController";
 import { SignUpView } from "./SignUpView";
 
